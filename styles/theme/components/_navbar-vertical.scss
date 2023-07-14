@@ -1,0 +1,183 @@
+// Navbar Vertcial
+
+.navbar-vertical {
+  margin-left: -17rem;
+  display: block;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 250px;
+  padding: 0rem;
+  background-color: $black;
+  border-right: 1px solid $black;
+  -webkit-transition: margin 0.25s ease-out;
+  -moz-transition: margin 0.25s ease-out;
+  -o-transition: margin 0.25s ease-out;
+  transition: margin 0.25s ease-out;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+
+  .slimScrollDiv {
+    height: 100% !important;
+    overflow-y: auto;
+  }
+  .nav-scroller {
+    height: 100% !important;
+    overflow-y: auto;
+  }
+  .navbar-brand {
+    padding: 1rem 1.5rem 4rem;
+    margin-right: 0px;
+    display: block;
+    width: 100%;
+    img {
+      width: 80%;
+      display: block;
+      margin: auto;
+    }
+    .navbar-logo-upload {
+      display: block;
+      border: 1px dashed $white;
+      padding: 5px;
+      cursor: pointer;
+      h4 {
+        font-size: 18px;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+      span {
+        font-size: 12px;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    &.noMargin {
+      padding: 0.5rem 1.5rem;
+    }
+  }
+
+  .navbar-heading {
+    color: $gray-700;
+    padding: 1rem 1.5rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    font-weight: 700;
+  }
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        padding: 1rem 1.5rem;
+        display: flex;
+        align-items: center;
+        color: $white;
+        font-weight: 500;
+        line-height: 1.8;
+        -webkit-transition: all 0.5s;
+        white-space: nowrap;
+        transition: all 0.5s;
+        &:hover {
+          color: $gray-200;
+        }
+
+        &:hover .nav-icon {
+          color: $gray-200;
+          opacity: 1;
+        }
+
+        &.active {
+          color: $black;
+          background-color: $white;
+        }
+
+        &.active .nav-icon {
+          color: $black;
+          opacity: 1;
+        }
+      }
+      .nav-link[data-bs-toggle="collapse"] {
+        position: relative;
+        &:after {
+          display: block;
+          content: "";
+          background: url(../../../public/fonts/feather-icons/icons/chevron-down.svg);
+          font-family: Feather;
+          margin-left: auto;
+          transition: 0.5s ease;
+          position: absolute;
+          right: 1.5rem;
+          height: 24px;
+          width: 24px;
+          -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+          transform: scale(0.7);
+        }
+      }
+    }
+    .nav-icon {
+      opacity: 1;
+      font-size: 1.5rem;
+      margin-right: 1rem !important;
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s;
+    }
+    .sub-nav-icon {
+      font-size: 0.35rem;
+      margin-right: 0.5rem;
+    }
+    .nav {
+      .nav-item {
+        .nav-link {
+          color: $gray-500;
+          padding: 0.25rem 3rem;
+          &:hover {
+            color: $white;
+          }
+          &.active {
+            color: $white;
+          }
+        }
+        .nav {
+          .nav-item {
+            .nav-link {
+              color: $gray-500;
+              padding: 0.25rem 3.5rem;
+
+              &:hover {
+                color: $white;
+              }
+              &.active {
+                color: $white;
+              }
+            }
+            .nav {
+              .nav-item {
+                .nav-link {
+                  color: $gray-500;
+                  padding: 0.25rem 4.2rem;
+                  &:hover {
+                    color: $white;
+                  }
+                  &.active {
+                    color: $white;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.collapse.in {
+  display: block;
+}
