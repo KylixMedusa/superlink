@@ -3,6 +3,39 @@
 //
 // form
 
+.auth-form-card {
+  .form-control {
+    border: none;
+    border-bottom: 1.5px solid lightgrey;
+    border-radius: 0;
+    padding-left: 0;
+    box-shadow: none;
+    transition: border-color 250ms ease-in-out;
+
+    &:hover,
+    &:focus {
+      border-color: $primary;
+      box-shadow: none;
+    }
+  }
+
+  .input-group .btn {
+    border: none;
+    border-radius: 0;
+    border-right: 1.5px solid lightgrey;
+    border-bottom: 1.5px solid lightgrey;
+    transition: border-color 250ms ease-in-out;
+
+    &:hover,
+    &:focus {
+      color: $primary;
+      border-color: $primary;
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+}
+
 .form-control-flush {
   border-top: 0px;
   border-left: 0px;

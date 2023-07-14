@@ -100,12 +100,12 @@ const NavbarVertical = (props) => {
     <Fragment>
       <SimpleBar style={{ maxHeight: "100vh" }}>
         <div className="nav-scroller">
-          <Link href="/" className="navbar-brand">
-            {/* <Image src="/assets/images/logo.svg" alt="Logo" /> */}
-            <div className="d-flex flex-column align-items-center justify-content-center navbar-logo-upload">
+          <Link href="/" className="navbar-brand mt-2">
+            <Image src="/images/brand/logo.png" alt="Logo" />
+            {/* <div className="d-flex flex-column align-items-center justify-content-center navbar-logo-upload">
               <h4 className="text-white">YOUR LOGO</h4>
               <span className="text-white">click to upload your logo</span>
-            </div>
+            </div> */}
           </Link>
         </div>
         {/* Dashboard Menu */}
@@ -340,9 +340,9 @@ const NavbarVertical = (props) => {
         </Accordion>
         {/* end of Dashboard Menu */}
       </SimpleBar>
-      <Link href="/" className="navbar-brand noMargin">
-        <Image src="/images/brand/logo/logo.svg" alt="Logo" />
-      </Link>
+      {/* <Link href="/" className="navbar-brand noMargin">
+        <Image src="/images/brand/logo.png" alt="Logo" />
+      </Link> */}
     </Fragment>
   );
 };
