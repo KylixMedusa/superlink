@@ -1,4 +1,55 @@
-// 
+//
 // user.scss
 // Use this to write your custom SCSS
 //
+
+.confirmation-modal {
+  text-align: center;
+  .modal-header,
+  .modal-footer {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+  }
+  .modal-header {
+    padding-bottom: 0;
+    padding-top: 2rem;
+  }
+  .modal-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $primary;
+  }
+  .modal-body {
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: $primary;
+    p {
+      margin: 0;
+    }
+  }
+  .modal-footer {
+    padding-bottom: 2rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.settings-navbar {
+  .nav-link {
+    font-size: 1rem;
+    color: $gray-600;
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    i {
+      font-size: 20px;
+    }
+    &.active {
+      color: $primary;
+      background-color: $gray-200;
+    }
+  }
+}

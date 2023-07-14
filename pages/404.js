@@ -1,31 +1,45 @@
 // import node module libraries
 import { Fragment } from 'react';
-import { Col, Row, Image } from 'react-bootstrap';
-import Link from 'next/link';
 
-// import blank layout, header and footer to override default layout 
+// import blank layout, header and footer to override default layout
 import NotFound from 'layouts/NotFound';
+import Link from 'next/link';
+import {
+  Col,
+  Row,
+} from 'react-bootstrap';
 
 const Error404 = () => {
-	return (
-		<Fragment>
-			<Row >
-				<Col sm={12}>
-					<div className="text-center">
-						<div className="mb-3">
-							<Image src="/images/error/404-error-img.png" alt="" className="img-fluid" />
-						</div>
-						<h1 className="display-4 fw-bold">Oops! the page not found.</h1>
-						<p className="mb-4">Or simply leverage the expertise of our consultation
-							team.</p>
-						<Link href="/" className="btn btn-primary">
-							Go Home
-						</Link>
-					</div>
-				</Col>
-			</Row>
-		</Fragment>
-	);
+  return (
+    <Fragment>
+      <Row
+        style={{
+          height: "100vh",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Col sm={4}>
+          <div className="text-center">
+            <h3 className="fw-bold mb-2">Page Not Found</h3>
+            <p className="mb-6">
+              The page you are looking for might have been removed or is
+              temporarily unavailable.
+            </p>
+            <Link
+              href="/"
+              className="btn btn-primary"
+              style={{
+                width: "100%",
+              }}
+            >
+              Return Home
+            </Link>
+          </div>
+        </Col>
+      </Row>
+    </Fragment>
+  );
 };
 
 Error404.Layout = NotFound;

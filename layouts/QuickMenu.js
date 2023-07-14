@@ -1,17 +1,25 @@
-import "simplebar/dist/simplebar.min.css";
+import 'simplebar/dist/simplebar.min.css';
 
-import { Fragment } from "react";
+import { Fragment } from 'react';
 
 // import data files
-import NotificationList from "data/Notification";
+import NotificationList from 'data/Notification';
 // import hooks
-import useMounted from "hooks/useMounted";
+import useMounted from 'hooks/useMounted';
 // import node module libraries
-import Link from "next/link";
-import { Col, Dropdown, Image, ListGroup, Row } from "react-bootstrap";
-import { useMediaQuery } from "react-responsive";
+import Link from 'next/link';
+import {
+  Button,
+  Col,
+  Dropdown,
+  Image,
+  ListGroup,
+  Row,
+} from 'react-bootstrap';
+import { CheckCircle } from 'react-feather';
+import { useMediaQuery } from 'react-responsive';
 // simple bar scrolling used for notification item scrolling
-import SimpleBar from "simplebar-react";
+import SimpleBar from 'simplebar-react';
 
 const QuickMenu = () => {
   const hasMounted = useMounted();
@@ -67,9 +75,14 @@ const QuickMenu = () => {
             as="a"
             bsPrefix=" "
             id="dropdownNotification"
-            className="btn btn-light btn-icon rounded-circle indicator indicator-primary text-muted"
+            className="btn btn-icon indicator indicator-primary text-muted"
           >
-            <i className="fe fe-bell"></i>
+            <i
+              className="fe fe-bell"
+              style={{
+                fontSize: "20px",
+              }}
+            ></i>
           </Dropdown.Toggle>
           <Dropdown.Menu
             className="dashboard-dropdown notifications-dropdown dropdown-menu-lg dropdown-menu-end py-0"
@@ -79,11 +92,15 @@ const QuickMenu = () => {
             <Dropdown.Item className="mt-3" bsPrefix=" " as="div">
               <div className="border-bottom px-3 pt-0 pb-3 d-flex justify-content-between align-items-end">
                 <span className="h4 mb-0">Notifications</span>
-                <Link href="/" className="text-muted">
-                  <span className="align-middle">
-                    <i className="fe fe-settings me-1"></i>
-                  </span>
-                </Link>
+                <Button variant="link" className="p-0">
+                  <span className="align-middle">Mark all as read</span>
+                  <CheckCircle
+                    size={16}
+                    style={{
+                      marginLeft: 6,
+                    }}
+                  />
+                </Button>
               </div>
               <Notifications />
               <div className="border-top px-3 pt-3 pb-3">
