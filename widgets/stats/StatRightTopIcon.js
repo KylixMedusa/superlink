@@ -1,31 +1,58 @@
 // Widget : Stat Style
 // Style : Stat widget with right top icon
 
+import dynamic from 'next/dynamic';
 // import node module libraries
-import PropTypes from "prop-types";
-import { Card } from "react-bootstrap";
-import dynamic from "next/dynamic";
+import PropTypes from 'prop-types';
+import { Card } from 'react-bootstrap';
 
 const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 const StatRightTopIcon = (props) => {
+  const baseColor = "#5572aa";
+  const strokeColor = "#ebeef3";
+  const labelColor = "#6e7687";
+  const lightColor = "#f4f5f7";
+
   const LineChart = {
     options: {
       chart: {
-        height: 50,
+        fontFamily: "inherit",
         type: "area",
+        height: 50,
+        toolbar: {
+          show: false,
+        },
         zoom: {
           enabled: false,
         },
+        sparkline: {
+          enabled: true,
+        },
       },
-      grid: {
-        show: false,
-      },
-      toolbars: {
+      plotOptions: {},
+      legend: {
         show: false,
       },
       dataLabels: {
         enabled: false,
+      },
+      plotOptions: {},
+      legend: {
+        show: false,
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      fill: {
+        type: "solid",
+        opacity: 1,
+      },
+      stroke: {
+        curve: "smooth",
+        show: true,
+        width: 3,
+        colors: [baseColor],
       },
       xaxis: {
         categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
@@ -38,6 +65,7 @@ const StatRightTopIcon = (props) => {
         labels: {
           show: false,
           style: {
+            colors: labelColor,
             fontSize: "12px",
           },
         },
@@ -45,6 +73,7 @@ const StatRightTopIcon = (props) => {
           show: false,
           position: "front",
           stroke: {
+            color: strokeColor,
             width: 1,
             dashArray: 3,
           },
@@ -53,16 +82,41 @@ const StatRightTopIcon = (props) => {
           enabled: false,
         },
       },
-      stroke: {
-        width: 1,
-        curve: "smooth",
-        colors: ["#5572aa"],
-      },
       yaxis: {
-        show: false,
         labels: {
           show: false,
+          style: {
+            colors: labelColor,
+            fontSize: "12px",
+          },
         },
+      },
+      states: {
+        normal: {
+          filter: {
+            type: "none",
+            value: 0,
+          },
+        },
+        hover: {
+          filter: {
+            type: "none",
+            value: 0,
+          },
+        },
+        active: {
+          allowMultipleDataPointsSelection: false,
+          filter: {
+            type: "none",
+            value: 0,
+          },
+        },
+      },
+      colors: [lightColor],
+      markers: {
+        colors: [lightColor],
+        strokeColors: [baseColor],
+        strokeWidth: 3,
       },
     },
     series: [
@@ -75,23 +129,17 @@ const StatRightTopIcon = (props) => {
   const { info } = props;
   return (
     <Card>
-      <Card.Body className="pb-0">
-        <div className="d-flex justify-content-between align-items-center mb-2">
-          <div>
-            <h5 className="mb-0 text-400">{info.title}</h5>
-          </div>
-          {/* <div className="icon-shape icon-md bg-light-primary text-primary rounded-2">
-            {info.icon}
-          </div> */}
+      <Card.Body className="p-0">
+        <div className="m-4 mb-0">
+          <h5 className="mb-2 text-400">{info.title}</h5>
+          <h4 className="fw-bold">{info.value}</h4>
         </div>
         <div>
-          <h4 className="fw-bold">{info.value}</h4>
           <Chart
             options={LineChart.options}
             series={LineChart.series}
             type="area"
             className="chart"
-            style={{ minHeight: "50px" }}
           />
         </div>
       </Card.Body>

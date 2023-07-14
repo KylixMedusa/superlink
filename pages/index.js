@@ -1,21 +1,21 @@
 // import node module libraries
-import { Fragment } from "react";
-import Link from "next/link";
-import { Container, Col, Row } from "react-bootstrap";
+import { Fragment } from 'react';
 
-// import widget/custom components
-import { StatRightTopIcon } from "widgets";
-
+// import required data files
+import ProjectsStatsData from 'data/dashboard/ProjectsStatsData';
+import {
+  Col,
+  Container,
+  Row,
+} from 'react-bootstrap';
 // import sub components
 import {
   ActiveProjects,
-  Teams,
-  TasksPerformance,
   ActivityFeed,
-} from "sub-components";
-
-// import required data files
-import ProjectsStatsData from "data/dashboard/ProjectsStatsData";
+  TasksPerformance,
+} from 'sub-components';
+// import widget/custom components
+import { StatRightTopIcon } from 'widgets';
 
 const Home = () => {
   return (
