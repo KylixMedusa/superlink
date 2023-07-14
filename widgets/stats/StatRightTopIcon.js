@@ -12,30 +12,57 @@ const StatRightTopIcon = (props) => {
   const LineChart = {
     options: {
       chart: {
-        type: "line",
+        height: 50,
+        type: "area",
         zoom: {
           enabled: false,
         },
+      },
+      grid: {
+        show: false,
+      },
+      toolbars: {
+        show: false,
       },
       dataLabels: {
         enabled: false,
       },
       xaxis: {
-        show: false,
-        labels: {
+        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+        axisBorder: {
           show: false,
         },
-        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+        axisTicks: {
+          show: false,
+        },
+        labels: {
+          show: false,
+          style: {
+            fontSize: "12px",
+          },
+        },
+        crosshairs: {
+          show: false,
+          position: "front",
+          stroke: {
+            width: 1,
+            dashArray: 3,
+          },
+        },
+        tooltip: {
+          enabled: false,
+        },
+      },
+      stroke: {
+        width: 1,
+        curve: "smooth",
+        colors: ["#5572aa"],
       },
       yaxis: {
         show: false,
         labels: {
           show: false,
         },
-      },
-      stroke: {
-        width: 1,
-        curve: "smooth",
       },
     },
     series: [
@@ -48,7 +75,7 @@ const StatRightTopIcon = (props) => {
   const { info } = props;
   return (
     <Card>
-      <Card.Body>
+      <Card.Body className="pb-0">
         <div className="d-flex justify-content-between align-items-center mb-2">
           <div>
             <h5 className="mb-0 text-400">{info.title}</h5>
@@ -62,8 +89,9 @@ const StatRightTopIcon = (props) => {
           <Chart
             options={LineChart.options}
             series={LineChart.series}
-            type="line"
+            type="area"
             className="chart"
+            style={{ minHeight: "50px" }}
           />
         </div>
       </Card.Body>

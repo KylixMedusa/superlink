@@ -33,6 +33,12 @@ export const DashboardMenu = [
   },
   {
     id: uuid(),
+    title: "Dashboard Agency",
+    icon: "grid",
+    link: "/dashboard-agency",
+  },
+  {
+    id: uuid(),
     title: "Teams",
     icon: "users",
     link: "/teams",

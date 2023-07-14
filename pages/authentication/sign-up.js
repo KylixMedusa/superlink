@@ -73,7 +73,7 @@ const SignUp = () => {
 
               <InputGroup className="mb-4">
                 <DropdownButton
-                  variant="outline-primary"
+                  variant="outline-secondary"
                   title="+1"
                   id="input-group-dropdown-1"
                   style={{ borderTop: "none", borderLeft: "none" }}

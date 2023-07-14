@@ -12,7 +12,7 @@ const ActiveProjects = () => {
   const LineChart = {
     options: {
       chart: {
-        type: "line",
+        type: "area",
         zoom: {
           enabled: false,
         },
@@ -22,10 +22,34 @@ const ActiveProjects = () => {
       },
       xaxis: {
         categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+        axisBorder: {
+          show: false,
+        },
+        axisTicks: {
+          show: false,
+        },
+        labels: {
+          show: true,
+          style: {
+            fontSize: "12px",
+          },
+        },
+        crosshairs: {
+          show: false,
+          position: "front",
+          stroke: {
+            width: 1,
+            dashArray: 3,
+          },
+        },
+        tooltip: {
+          enabled: false,
+        },
       },
       stroke: {
         width: 2,
         curve: "smooth",
+        colors: ["#5572aa"],
       },
     },
     series: [
@@ -62,7 +86,7 @@ const ActiveProjects = () => {
               <Chart
                 options={LineChart.options}
                 series={LineChart.series}
-                type="line"
+                type="area"
                 className="chart"
               />
             </div>
