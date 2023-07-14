@@ -1,4 +1,5 @@
 // import node module libraries
+
 import { Fragment } from 'react';
 
 // import blank layout, header and footer to override default layout
@@ -12,27 +13,19 @@ import {
 const Error404 = () => {
   return (
     <Fragment>
-      <Row
-        style={{
-          height: "100vh",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Col sm={4}>
+      <Row>
+        <Col
+          sm={12}
+          style={{ minHeight: "100vh", maxWidth: "350px" }}
+          className="d-md-flex justify-content-center align-items-center mx-auto"
+        >
           <div className="text-center">
-            <h3 className="fw-bold mb-2">Page Not Found</h3>
-            <p className="mb-6">
+            <h3 className="fw-bold">Page Not Found</h3>
+            <p className="mt-3 mb-4">
               The page you are looking for might have been removed or is
               temporarily unavailable.
             </p>
-            <Link
-              href="/"
-              className="btn btn-primary"
-              style={{
-                width: "100%",
-              }}
-            >
+            <Link href="/" className="btn btn-primary mt-3">
               Return Home
             </Link>
           </div>

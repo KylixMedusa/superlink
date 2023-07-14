@@ -52,4 +52,27 @@
       background-color: $gray-200;
     }
   }
+.text-blue {
+  color: $primary-blue;
+  font-weight: 500;
+}
+
+.opacity-3 {
+  opacity: 0.3;
+}
+
+.btn-primary {
+  border-radius: 500px;
+}
+
+.smooth-shadow-sm {
+  box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.05) !important;
+}
+
+.chart {
+  width: 100%;
+}
+
+h4 {
+  font-weight: bold;
 }
