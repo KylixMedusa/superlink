@@ -340,9 +340,9 @@ const NavbarVertical = (props) => {
         </Accordion>
         {/* end of Dashboard Menu */}
       </SimpleBar>
-      {/* <Link href="/" className="navbar-brand noMargin">
+      <Link href="/" className="navbar-brand my-1">
         <Image src="/images/brand/logo.png" alt="Logo" />
-      </Link> */}
+      </Link>
     </Fragment>
   );
 };

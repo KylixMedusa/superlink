@@ -18,7 +18,7 @@ import AuthLayout from "layouts/AuthLayout";
 const SignUp = () => {
   return (
     <Row className="align-items-center justify-content-center g-0 min-vh-100">
-      <Col xxl={4} lg={6} md={8} xs={12} className="py-8 py-xl-0">
+      <Col xl={6} lg={12} md={12} xs={12} className="py-8 py-xl-0">
         {/* Card */}
         <Card className="smooth-shadow-sm auth-form-card">
           {/* Card body */}
@@ -123,7 +123,7 @@ const SignUp = () => {
                     <span class="text-blue">Privacy Policy</span>
                   </p>
                 </div>
-                <div className="d-md-flex justify-content-center mt-4">
+                <div className="d-md-flex justify-content-center mt-8">
                   <div className="mt-4 mb-2 mb-md-0">
                     <Link href="/authentication/sign-in" className="fs-5">
                       <span class="text-blue">I already have an account</span>

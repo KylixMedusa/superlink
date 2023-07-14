@@ -7,12 +7,11 @@ const ActivityFeed = () => {
       <Col xs={12}>
         {/* card */}
         <Card>
-          {/* card body */}
+          <Card.Header style={{ backgroundColor: "#fff" }}>
+            <h4 style={{ margin: 0, paddingBlock: "10px" }}>Recent Activity</h4>
+          </Card.Header>
           <Card.Body>
             {/* card title */}
-            <Card.Title>
-              <h4>Recent Activity</h4>
-            </Card.Title>
 
             <div className="d-flex mb-5">
               <div>
@@ -30,6 +29,7 @@ const ActivityFeed = () => {
                 <p className="fs-5 mb-0">2m ago</p>
               </div>
             </div>
+            <hr />
             <div className="d-flex mb-5">
               <div>
                 <Image
@@ -46,6 +46,7 @@ const ActivityFeed = () => {
                 <p className="fs-5 mb-0">1hour ago</p>
               </div>
             </div>
+            <hr />
             <div className="d-flex">
               <div>
                 <Image

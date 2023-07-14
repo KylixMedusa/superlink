@@ -12,7 +12,13 @@ const ActiveProjects = () => {
   const LineChart = {
     options: {
       chart: {
-        id: "basic-bar",
+        type: "line",
+        zoom: {
+          enabled: false,
+        },
+      },
+      dataLabels: {
+        enabled: false,
       },
       xaxis: {
         categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
@@ -35,10 +41,24 @@ const ActiveProjects = () => {
         <Card>
           <Card.Body>
             <div>
-              <div>
-                <h3 className="mb-4">Stat</h3>
+              <div className="d-flex align-items-center justify-content-between gap-2">
+                <h5 className="mb-2 text-400">Stat 1</h5>
+                <div className="filter-tabs">
+                  <span>By Creator</span>
+                  <span>Daily</span>
+                  <span>Weekly</span>
+                  <span>Monthly</span>
+                  <span>Sort By Date</span>
+                </div>
               </div>
-              <h2 className="fw-bold">180K+</h2>
+              <h3 className="fw-bold">180K+</h3>
+              <p className="d-flex align-items-center gap-1">
+                <i
+                  className="fe fe-chevron-up"
+                  style={{ fontSize: "16px", color: "lightgreen" }}
+                />{" "}
+                <span className="fs-6">11.06%</span>
+              </p>
               <Chart
                 options={LineChart.options}
                 series={LineChart.series}

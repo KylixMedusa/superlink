@@ -1,4 +1,5 @@
 // import node module libraries
+import { useState } from "react";
 import { Row, Col, Card, Form, Button, Image } from "react-bootstrap";
 import Link from "next/link";
 
@@ -6,9 +7,10 @@ import Link from "next/link";
 import AuthLayout from "layouts/AuthLayout";
 
 const SignIn = () => {
+  const [passWordShown, setPasswordShown] = useState(false);
   return (
     <Row className="align-items-center justify-content-center g-0 min-vh-100">
-      <Col xxl={4} lg={6} md={8} xs={12} className="py-8 py-xl-0">
+      <Col xl={6} lg={12} md={12} xs={12} className="py-8 py-xl-0">
         {/* Card */}
         <Card className="smooth-shadow-sm auth-form-card">
           {/* Card body */}
@@ -39,14 +41,24 @@ const SignIn = () => {
               </Form.Group>
 
               {/* Password */}
-              <Form.Group controlId="password">
+              <Form.Group controlId="password" style={{ position: "relative" }}>
                 {/* <Form.Label>Password</Form.Label> */}
                 <Form.Control
-                  type="password"
+                  type={passWordShown ? "text" : "password"}
                   name="password"
                   placeholder="Password"
                   required=""
                 />
+                <span
+                  className="password_view_icon"
+                  onClick={() => setPasswordShown(!passWordShown)}
+                >
+                  {passWordShown ? (
+                    <i className="fe fe-eye-off"></i>
+                  ) : (
+                    <i class="fe fe-eye"></i>
+                  )}
+                </span>
               </Form.Group>
               <p className="fs-6 mt-2 mb-4">Must be at least 8 characters</p>
 
@@ -77,7 +89,7 @@ const SignIn = () => {
                     <span class="text-blue">Privacy Policy</span>
                   </p>
                 </div>
-                <div className="d-md-flex justify-content-between mt-4">
+                <div className="d-md-flex justify-content-between mt-8">
                   <div className="mb-2 mb-md-0">
                     <Link
                       href="/authentication/sign-up"
