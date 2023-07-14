@@ -41,7 +41,7 @@ const TasksPerformance = () => {
         },
       },
     },
-    chart: { type: "pie" },
+    chart: { type: "donut" },
     stroke: { lineCap: "round" },
     responsive: [
       {
@@ -98,17 +98,17 @@ const TasksPerformance = () => {
     <Card className="h-100">
       {/* card body  */}
       <Card.Body>
-        <div className="d-flex align-items-center justify-content-between mb-8">
-          <div>
-            <h4 className="mb-0">Top Performing Creators</h4>
+        <div className="d-flex align-items-center justify-content-between mb-8 gap-2">
+          <h4 className="mb-0">Top Performing Creators</h4>
+          <div className="filter-tabs">
+            <span>Sort By Date</span>
           </div>
-          <ActionMenu />
         </div>
         <div className="mb-8">
           <Chart
             options={perfomanceChartOptions}
             series={perfomanceChartSeries}
-            type="pie"
+            type="donut"
           />
         </div>
         {/* icon with content  */}

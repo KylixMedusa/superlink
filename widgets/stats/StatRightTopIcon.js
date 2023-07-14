@@ -12,10 +12,26 @@ const StatRightTopIcon = (props) => {
   const LineChart = {
     options: {
       chart: {
-        id: "basic-bar",
+        type: "line",
+        zoom: {
+          enabled: false,
+        },
+      },
+      dataLabels: {
+        enabled: false,
       },
       xaxis: {
+        show: false,
+        labels: {
+          show: false,
+        },
         categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+      },
+      yaxis: {
+        show: false,
+        labels: {
+          show: false,
+        },
       },
       stroke: {
         width: 1,
@@ -33,16 +49,16 @@ const StatRightTopIcon = (props) => {
   return (
     <Card>
       <Card.Body>
-        <div className="d-flex justify-content-between align-items-center mb-3">
+        <div className="d-flex justify-content-between align-items-center mb-2">
           <div>
-            <h4 className="mb-0">{info.title}</h4>
+            <h5 className="mb-0 text-400">{info.title}</h5>
           </div>
           {/* <div className="icon-shape icon-md bg-light-primary text-primary rounded-2">
             {info.icon}
           </div> */}
         </div>
         <div>
-          <h3 className="fw-bold">{info.value}</h3>
+          <h4 className="fw-bold">{info.value}</h4>
           <Chart
             options={LineChart.options}
             series={LineChart.series}

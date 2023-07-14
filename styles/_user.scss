@@ -57,6 +57,10 @@
   font-weight: 500;
 }
 
+.text-400 {
+  font-weight: 500;
+}
+
 .opacity-3 {
   opacity: 0.3;
 }
@@ -75,4 +79,31 @@
 
 h4 {
   font-weight: bold;
+}
+
+.row {
+  height: 100%;
+  .card {
+    height: 100%;
+  }
+}
+
+.password_view_icon {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  z-index: 1;
+  font-size: 14px;
+  color: $primary;
+  cursor: pointer;
+}
+
+.filter-tabs {
+  display: flex;
+  span {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 1px solid lightgrey;
+  }
 }

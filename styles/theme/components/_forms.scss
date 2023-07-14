@@ -4,7 +4,10 @@
 // form
 
 .auth-form-card {
+  max-width: 500px;
+  margin-inline: auto;
   .form-control {
+    position: relative;
     border: none;
     border-bottom: 1.5px solid lightgrey;
     border-radius: 0;
